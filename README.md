@@ -23,8 +23,19 @@ Next, install the required packages:
 
 ## Training
 ### Data
-Download [FLAME model](https://flame.is.tue.mpg.de/download.php), choose **FLAME 2020** and unzip it, copy 
+Download [FLAME model](https://flame.is.tue.mpg.de/download.php), choose **FLAME 2020** and unzip it, copy
 `generic_model.pkl` into `./data/DECA/data`.  
+
+Download [sample data](https://drive.google.com/file/d/1kyNpmGKCYWZ46osHOA-WzW5HCNAcgDA1/view?usp=sharing) and unzip it into `./data`.
+A dataset is a directory with the following structure:
+
+    data/${obj_id}
+        ├── 0 # camera poses
+        ├── deca_out                # DECA predictions
+        ├── test_nohair             # Estimated masks
+        ├── predictions.pth         # Estimated keypoints
+        ├── to_ignore.txt           # Bad frame IDs
+        └── video_sections.txt      # Video sections
 
 ### Stage 1
 After preparing a dataset, you can train SunStage stage 1 by running:
@@ -33,14 +44,14 @@ After preparing a dataset, you can train SunStage stage 1 by running:
     python train_s1.py \
         --data_dir $DATASET_PATH \
         --obj_name obj_name
- 
+
 Stage 1 optimizes for the camera parameters. When it finished running, you can train SunStage stage 2 by running:
 
     export DATASET_PATH=/path/to/dataset
     python train_s2.py \
         --data_dir $DATASET_PATH \
         --obj_name obj_name
- 
+
 ## Citing
 If you find our work useful, please consider citing:
 ```BibTeX
