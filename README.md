@@ -46,6 +46,7 @@ After preparing a dataset, you can train SunStage stage 1 by running:
         --data_dir $DATASET_PATH \
         --obj_name obj_name
 
+### Stage 2
 Stage 1 optimizes for the camera parameters. When it finished running, you can train SunStage stage 2 by running:
 
     export DATASET_PATH=/path/to/dataset
