@@ -5,6 +5,7 @@ This is the code for SunStage: Portrait Reconstruction and Relighting using the 
  * [Project Page](https://sunstage.cs.washington.edu)
  * [Paper](https://arxiv.org/abs/2204.03648)
  * [Video](https://www.youtube.com/watch?v=ZbEKvIpwYEs)
+ * [Sample Data](https://drive.google.com/file/d/1kyNpmGKCYWZ46osHOA-WzW5HCNAcgDA1/view?usp=sharing)
 
 ## Setup
 The code can be run under any environment with Python 3.9 and above.
@@ -30,7 +31,7 @@ Download [sample data](https://drive.google.com/file/d/1kyNpmGKCYWZ46osHOA-WzW5H
 A dataset is a directory with the following structure:
 
     data/${obj_id}
-        ├── 0 # camera poses
+        ├── 0                       # camera poses
         ├── deca_out                # DECA predictions
         ├── test_nohair             # Estimated masks
         ├── predictions.pth         # Estimated keypoints
